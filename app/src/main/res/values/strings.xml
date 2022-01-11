@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Trending Repo</string>
+    <string name="notification_message">Github trends are now updated. Please visit the app</string>
+</resources>

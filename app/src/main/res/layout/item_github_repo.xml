@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:id="@+id/cvEmployeeCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    card_view:cardBackgroundColor="@color/white"
+    android:layout_margin="@dimen/small_padding"
+    card_view:cardCornerRadius="@dimen/small_margin">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/default_padding">
+
+        <TextView
+            android:id="@+id/tvRepoFullName"
+            android:text="xyz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:padding="@dimen/default_padding"
+            android:textStyle="bold"
+            android:drawableLeft="@drawable/ic_repo"
+
+            android:drawablePadding="@dimen/small_padding"
+            android:textSize="@dimen/text_size_title"/>
+
+        <TextView
+            android:id="@+id/tvRepoDescription"
+            android:text="desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvRepoFullName"
+            android:paddingStart="@dimen/default_padding"
+            android:paddingEnd="@dimen/default_padding"/>
+
+        <TextView
+            android:id="@+id/tvLanguage"
+            android:text="@{item.language}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvRepoDescription"
+            android:padding="@dimen/default_padding"
+            android:drawableLeft="@drawable/ic_language"
+            android:drawablePadding="@dimen/small_padding"/>
+
+        <TextView
+            android:id="@+id/tvStars"
+            android:text="@{item.stargazersCount.toString()}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/tvLanguage"
+            app:layout_constraintTop_toBottomOf="@id/tvRepoDescription"
+            android:padding="@dimen/default_padding"
+            android:drawableLeft="@drawable/ic_star"
+            android:drawablePadding="@dimen/small_padding"/>
+
+        <TextView
+            android:id="@+id/tvForks"
+            android:text="@{item.forksCount.toString()}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/tvStars"
+            app:layout_constraintTop_toBottomOf="@id/tvRepoDescription"
+            android:padding="@dimen/default_padding"
+            android:drawableLeft="@drawable/ic_branch"
+            android:drawablePadding="@dimen/small_padding"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
